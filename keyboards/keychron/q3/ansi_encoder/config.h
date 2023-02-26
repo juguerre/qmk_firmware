@@ -33,3 +33,8 @@
 
 /* Enable CapsLcok LED */
 #define CAPS_LOCK_LED_INDEX 50
+
+/* Tapping dance config*/
+#define TAPPING_TERM 175
+#define TAPPING_TERM_PER_KEY
+
