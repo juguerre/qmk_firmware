@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [WIN_FN] = LAYOUT_tkl_f13_ansi(
         _______,  KC_BRID,  KC_BRIU,  _______,  _______,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,    RGB_TOG,  _______,  _______,  KC_SLEP,
         _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,  _______,  _______,
-        RGB_TOG,  _______,  _______,  _______,  _______,  _______,  QK_MACRO_4,QK_MACRO_3,KC_UP,  _______,  _______,  _______,  _______,    _______,  _______,  _______,  _______,
+        RGB_TOG,  _______,  QK_MACRO_5,_______,  _______,  _______,  QK_MACRO_4,QK_MACRO_3,KC_UP,  _______,  _______,  _______,  _______,    _______,  _______,  _______,  _______,
         _______,  KC_LCTL,  KC_LSFT,  KC_HOME,  KC_END,   _______,  QK_MACRO_2,KC_LEFT, KC_DOWN,  KC_RGHT,  _______,  _______,              _______,
         _______,            KC_LT,    KC_GT,    _______,  _______,  _______,  KC_BSPC,  KC_DEL,   _______,  _______,  _______,              _______,            KC_MS_U,
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  KC_MS_L,  KC_MS_D,  KC_MS_R),
@@ -99,6 +99,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             case QK_MACRO_4:
                 // {KC_LCTL,KC_X}  CUT
                 SEND_STRING(SS_LCTL("x"));
+                return false;
+            case QK_MACRO_5:
+                // {KC_LCTL,KC_W}  pycharm expand selection
+                SEND_STRING(SS_LCTL("w"));
                 return false;
         }
     }
